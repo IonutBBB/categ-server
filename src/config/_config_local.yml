@@ -3,7 +3,7 @@ api:
   port: 8080
 db:
   username: "root"
-  password:
+  password: "12345678"
   database: "SH"
   dialect: "mysql"
   host: '127.0.0.1'
