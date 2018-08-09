@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const models = require('./models');
 const { db } = require('./config');
 
@@ -21,7 +21,9 @@ module.exports = (callback) => {
     }
     sequelize.sync({ force: db.wipe }).then(() => {
       console.log('-- Database synced '.concat(db.wipe ? ': data it\'s wiped & schema recreated' : ''));
-      if (callback) callback();
+      if (callback) {
+        callback();
+      }
     });
   });
 };

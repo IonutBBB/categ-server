@@ -1,19 +1,18 @@
 const { api } = require('./config');
-
+/* eslint-disable */
 module.exports = function listen(app) {
   const server = require('http').Server(app);
   // const io = require('socket.io')(server);
-  
-  server.listen(api.port, function started() {
-    const address = this.address();
-    
-    const host = address.address !== '::' ? address.address : 'localhost';
-    const port = address.port;
-    console.log('App listening at http://%s:%s', host, port);
-    console.log('Swagger Doc started at at http://%s:%s/docs', host, port);
+
+  server.listen(api.port, function listen() {
+    const { address, port } = this.address();
+
+    console.log('App listening at http://%s:%s', address || 'localhost', port);
+    console.log('Swagger Doc started at at http://%s:%s/docs', address || 'localhost', port);
   });
   
-  /*io.on('connection', (socket) => {
+  /*
+  io.on('connection', (socket) => {
       socket.emit('connected');
       
       socket.on('disconnectMe', () => {
@@ -31,5 +30,7 @@ module.exports = function listen(app) {
       
       });
     },
-  );*/
+  );
+  */
+
 };

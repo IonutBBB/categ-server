@@ -2,12 +2,12 @@ environment: local
 api:
   port: 8080
 db:
-  username: root
-  password:
-  database: SH
-  dialect: mysql
+  username: "root"
+  password: "12345678"
+  database: "SH"
+  dialect: "mysql"
   host: '127.0.0.1'
-  port: 3306
+  port: "3306"
   wipe: true
   logging: false
 secret: "mcro2016"

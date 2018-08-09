@@ -6,7 +6,7 @@ const initializeConfig = () => {
   const global = yaml.safeLoad(fs.readFileSync('./src/config/config.yml', 'utf8'));
   const envConfig = yaml.safeLoad(fs.readFileSync(`./src/config/config_${env}.yml`, 'utf8'));
 
-  return Object.assign({}, envConfig, global);
+  return Object.assign({}, global, envConfig);
 };
 
 module.exports = initializeConfig();
