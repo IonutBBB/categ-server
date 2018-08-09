@@ -1,0 +1,25 @@
+environment: local
+api:
+  port: 8080
+db:
+  username: root
+  password:
+  database: SH
+  dialect: mysql
+  host: '127.0.0.1'
+  port: 3306
+  wipe: true
+  logging: false
+secret: "mcro2016"
+apiVersion: 'v1'
+
+smtpConfig:
+  host: smtp.gmail.com
+  port: 465
+  secure: true
+  auth:
+    user: 'mcallservices@gmail.com'
+    pass: 'mcallserve2017'
+logoUrl: https://lh5.googleusercontent.com/eH5YQFg-fVZiol-yB_C4T9WBjyYzZM3aoAl_o2nJus1YHz87fGiRRK8cXoodrTCx8oESknk7eTLvfig=w2806-h1560
+temrsUrl: http://smartharvest.io/terms
+privacyUrl: http://smartharvest.io/privacy
