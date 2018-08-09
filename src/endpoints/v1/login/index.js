@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const {secret} = require('../../../config');
 const {Login} = require('./controller');
 const {Register} = require('../register/controller');
-const {Contacts} = require('../contacts/controller');
 const {EMAIL_REGEX} = require('../../../utils/Constants');
 
 /**

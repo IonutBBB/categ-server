@@ -1,7 +1,7 @@
 const appRoot = require('app-root-path');
+/* eslint-disable */
 const tokenValidation = require(`${ appRoot }/src/services/TokenService`);
-const { Contacts } = require('../contacts/controller');
-
+/* eslint-enable */
 
 module.exports = (router) => {
   /**
@@ -28,29 +28,13 @@ module.exports = (router) => {
     const tokenValidity = tokenValidation.validateToken(req);
     
     if (tokenValidity.success === true) {
-      Contacts
-        .findByEmail(tokenValidity.data.email)
-        .then((response) => {
-          if(response) {
-          res.status(200).send({
-            success: true,
-            user: response
-          });
-          } else {
-            res.status(400).send({
-              success: false
-            });
-          }
-        }).catch((error) => {
-        res.status(400).send({
-          success: false,
-          error
-        });
+      res.status(200).send({
+        success: true,
+        user: {} // here return user
       });
     } else {
-      res.status(401).send(tokenValidity)
+      res.status(401).send(tokenValidity);
     }
   });
-  
 };
 
